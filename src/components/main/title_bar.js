@@ -13,9 +13,11 @@ class TitleBar extends Component{
 
         return(
             <div>
+                <h3 className="date-bar">
                 {
                     this.state.date
                 }
+                </h3>
             </div>
         )
 

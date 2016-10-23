@@ -1,0 +1,17 @@
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.task-details {
+    margin-bottom: 25px;
+    overflow: auto;
+    height:500px;
+}
+
+.date-bar{
+    text-align: right;
+}
+
+footer {
+    margin: 50px 0;
+}

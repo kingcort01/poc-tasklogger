@@ -18,7 +18,7 @@ class FormItem extends Component{
         return(
             <div>
                 <textarea ref="taskValue"></textarea>
-                <button onClick={this.AddItem} className="btn btn-primary">Save</button>
+                <button onClick={this.AddItem} className="btn btn-primary">Add</button>
             </div>
         )
 
