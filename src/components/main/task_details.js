@@ -7,12 +7,10 @@ class TaskDetails extends Component{
     constructor(props) {
         super(props);
 
+        console.log("details : ", props);
+
         this.state = {
-            taskArray : [
-                'task 101 -lkdsafjdsaf',
-                'zzzzzzzzzzzzzzzz',
-                'task 101 -lkdsafjdsaf'
-            ]
+            taskArray : this.props.details
         };
 
         this.addTaskItem = this.addTaskItem.bind(this);

@@ -4,31 +4,18 @@ class DateBar extends Component{
 
     constructor(props){
         super(props);
-    }
 
-    getCurrentDate(){
-        console.log('asdflksdf');
-        let today = new Date();
-        let dd = today.getDate();
-        let mm = today.getMonth()+1; //January is 0!
-        let yyyy = today.getFullYear();
+        this.state = { date : this.props.createDate };
 
-        if(dd<10) {
-            dd='0'+dd
-        }
-
-        if(mm<10) {
-            mm='0'+mm
-        }
-
-        return mm+'/'+dd+'/'+yyyy;
     }
 
     render(){
 
         return(
             <div>
-                THIS IS THE DATE BAR
+                {
+                    this.state.date
+                }
             </div>
         )
 
