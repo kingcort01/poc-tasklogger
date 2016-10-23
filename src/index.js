@@ -1,15 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
+import TaskItem from './components/task_item'
 
-import App from './components/app';
-import reducers from './reducers';
+class App extends Component{
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+    constructor(props) {
+        super(props);
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+        this.state = {
+            taskArray : [
+                    'task 101 -lkdsafjdsaf',
+                    'zzzzzzzzzzzzzzzz',
+                    'task 101 -lkdsafjdsaf'
+                ]
+        };
+
+    }
+
+    eachTask(task, i){
+        return (
+            <TaskItem key={i} index={i}>
+                {task}
+            </TaskItem>
+        );
+    }
+
+    render() {
+
+        return (
+            <div>
+                {
+                    this.state.taskArray.map(this.eachTask)
+                }
+            </div>
+        );
+
+    }
+
+}
+
+ReactDOM.render(<App />, document.querySelector('.container'))
