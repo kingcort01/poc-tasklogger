@@ -7,8 +7,6 @@ class TaskDetails extends Component{
     constructor(props) {
         super(props);
 
-        console.log("details : ", props);
-
         this.state = {
             taskArray : this.props.details
         };

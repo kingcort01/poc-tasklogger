@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class DateBar extends Component{
+class TitleBar extends Component{
 
     constructor(props){
         super(props);
@@ -23,4 +23,4 @@ class DateBar extends Component{
 
 }
 
-export default DateBar;
+export default TitleBar;

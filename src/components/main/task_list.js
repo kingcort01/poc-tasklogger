@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DateBar from './date_bar';
+import TitleBar from './title_bar';
 import TaskDetails from './task_details';
 
 class TaskList extends Component{
@@ -36,10 +36,9 @@ class TaskList extends Component{
     }
 
     renderTask(task, i){
-        console.log("wahti is this : ", task, " == ", i)
         return(
             <div key={i}>
-                <DateBar createDate={task.date}/>
+                <TitleBar createDate={task.date}/>
                 <TaskDetails details={task.details}/>
             </div>
         );
