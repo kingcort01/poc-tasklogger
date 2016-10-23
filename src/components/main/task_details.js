@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FormItem from './form_item';
 import TaskItem from './task_item';
 
 class TaskDetails extends Component{
@@ -14,26 +15,49 @@ class TaskDetails extends Component{
             ]
         };
 
+        this.addTaskItem = this.addTaskItem.bind(this);
+        this.updateTaskItem = this.updateTaskItem.bind(this);
+        this.renderTaskItem = this.renderTaskItem.bind(this);
+        this.deleteTaskItem = this.deleteTaskItem.bind(this);
     }
 
-    eachTask(task, i){
+    addTaskItem(tastValue){
+        let taskArray = this.state.taskArray;
+        taskArray.push(tastValue);
+        this.setState({ taskArray : taskArray });
+    }
+
+    updateTaskItem(taskValue, i){
+        let taskArray = this.state.taskArray;
+        taskArray[i] = taskValue;
+        this.setState({ taskArray : taskArray });
+    }
+
+    deleteTaskItem(i){
+        let taskArray = this.state.taskArray;
+        taskArray.splice(i, 1);
+        this.setState({ taskArray : taskArray });
+    }
+
+    renderTaskItem(task, i){
         return (
-            <TaskItem key={i} index={i}>
+            <TaskItem key={i} index={i} updateTaskItem={this.updateTaskItem} deleteTaskItem={this.deleteTaskItem}>
                 {task}
             </TaskItem>
         );
     }
 
     render() {
-
         return (
             <div>
-                {
-                    this.state.taskArray.map(this.eachTask)
-                }
+                <button onClick={this.addTaskItem.bind(null, 'asdfadsf')} className="btn btn-primary">Add</button>
+                <div>
+                    {
+                        this.state.taskArray.map(this.renderTaskItem)
+                    }
+                </div>
             </div>
         );
-
     }
 
 }
