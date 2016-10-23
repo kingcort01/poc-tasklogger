@@ -50,7 +50,7 @@ class TaskDetails extends Component{
     render() {
         return (
             <div>
-                <button onClick={this.addTaskItem.bind(null, 'asdfadsf')} className="btn btn-primary">Add</button>
+                <FormItem addTaskItem={this.addTaskItem}/>
                 <div>
                     {
                         this.state.taskArray.map(this.renderTaskItem)
