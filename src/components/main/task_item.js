@@ -15,8 +15,11 @@ class TaskItem extends Component{
     editItem(e){
         if(this.state.editing){
             let taskValue = this.refs.taskValue.value;
+            if(taskValue){
+                this.props.updateTaskItem(taskValue, this.props.index);
+                taskValue = "";
+            }
             this.setState({ editing : false});
-            this.props.updateTaskItem(taskValue, this.props.index);
         }else{
             this.setState({ editing : true });
         }

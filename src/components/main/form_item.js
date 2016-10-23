@@ -9,8 +9,12 @@ class FormItem extends Component{
     }
 
     AddItem(){
-        this.props.addTaskItem(this.refs.taskValue.value);
-        this.refs.taskValue.value = "";
+        let taskValue = this.refs.taskValue.value;
+        if(taskValue){
+            this.props.addTaskItem(this.refs.taskValue.value);
+            taskValue = "";
+        }
+
     }
 
     render(){
