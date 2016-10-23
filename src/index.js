@@ -1,39 +1,20 @@
-import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
-import TaskItem from './components/task_item'
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import TaskList from './components/main/task_list';
 
 class App extends Component{
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            taskArray : [
-                    'task 101 -lkdsafjdsaf',
-                    'zzzzzzzzzzzzzzzz',
-                    'task 101 -lkdsafjdsaf'
-                ]
-        };
-
+    constructor(props){
+        super(props)
     }
 
-    eachTask(task, i){
-        return (
-            <TaskItem key={i} index={i}>
-                {task}
-            </TaskItem>
-        );
-    }
+    render(){
 
-    render() {
-
-        return (
+        return(
             <div>
-                {
-                    this.state.taskArray.map(this.eachTask)
-                }
+                <TaskList/>
             </div>
-        );
+        )
 
     }
 
