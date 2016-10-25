@@ -45,15 +45,13 @@ class TaskList extends Component{
             date : today,
             details : []
         });
-        this.setState({ listArray : listArray })
+        this.setState({ listArray })
     }
 
     removeTaskList(index){
-        console.log("remove this : ", index);
         let listArray = this.state.listArray;
-        console.log('the list : ', listArray[index]);
         listArray.splice(index, 1);
-        this.setState({ listArray : listArray })
+        this.setState({ listArray })
     }
 
     renderTask(task, i){

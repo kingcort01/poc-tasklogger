@@ -20,19 +20,19 @@ class TaskDetails extends Component{
     addTaskItem(tastValue){
         let taskArray = this.state.taskArray;
         taskArray.push(tastValue);
-        this.setState({ taskArray : taskArray });
+        this.setState({ taskArray });
     }
 
     updateTaskItem(taskValue, i){
         let taskArray = this.state.taskArray;
         taskArray[i] = taskValue;
-        this.setState({ taskArray : taskArray });
+        this.setState({ taskArray });
     }
 
     deleteTaskItem(i){
         let taskArray = this.state.taskArray;
         taskArray.splice(i, 1);
-        this.setState({ taskArray : taskArray });
+        this.setState({ taskArray });
     }
 
     deleteTaskDetails(){

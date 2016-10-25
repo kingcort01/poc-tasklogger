@@ -19,7 +19,7 @@ class TaskItem extends Component{
                 this.props.updateTaskItem(taskValue, this.props.index);
                 taskValue = "";
             }
-            this.setState({ editing : false});
+            this.setState({ editing : false });
         }else{
             this.setState({ editing : true });
         }
