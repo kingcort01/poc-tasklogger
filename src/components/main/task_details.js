@@ -35,10 +35,6 @@ class TaskDetails extends Component{
         this.setState({ taskArray });
     }
 
-    deleteTaskDetails(){
-
-    }
-
     renderTaskItem(task, i){
         return (
             <TaskItem key={i} index={i} updateTaskItem={this.updateTaskItem} deleteTaskItem={this.deleteTaskItem}>
