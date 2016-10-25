@@ -36,9 +36,13 @@ class TaskList extends Component{
     }
 
     addTaskList(){
+        let monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+        let date = new Date();
+        let today = `${monthNames[date.getMonth()+1]} ${date.getDate()}, ${date.getFullYear()}`;
         let listArray = this.state.listArray;
         listArray.push({
-            date : 'Oct 25, 2016',
+            date : today,
             details : []
         });
         this.setState({ listArray : listArray })

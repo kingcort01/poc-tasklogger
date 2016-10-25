@@ -42,8 +42,8 @@ class TaskDetails extends Component{
     renderTaskItem(task, i){
         return (
             <TaskItem key={i} index={i} updateTaskItem={this.updateTaskItem} deleteTaskItem={this.deleteTaskItem}>
-                {task}
-            </TaskItem>
+        {task}
+    </TaskItem>
         );
     }
 
